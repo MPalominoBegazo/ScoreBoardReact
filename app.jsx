@@ -26,22 +26,32 @@ const Header = ({ players }) => {
   }
   return (
     <div className="header" >
-      <p>PLAYERS: {playersNum}</p>
+      <p>PLAYERS: {playersNum}</p><br/>
       <p>TOTAL POINTS: {score}</p>
     </div>
   );
 }
 
-const PlayerList = (props) => {
-  const li = props.items.map((item, index) => <ul key={index}> {item} </ul>);
+const getPlayersList = (players) => {
+  return players.map((player, index) => {
+      return (
+          <li key={index}>
+              <p>Nombre: {player.name}</p>
+              <p>Apeliido: {player.score}</p>
+          </li>
+
+      );
+  });
+}
+
+
+const PlayerList= ({ players }) => {
+  console.log("hola");
   return (
-    <div className="player">
-      <li>
-        <p>{li.name}</p>
-        <p>{li.score}</p>
-      </li>
-    </div>
-  )
+      <div>
+          <ul>{getPlayersList(players)}</ul>
+      </div>
+  );
 }
 
 const PlayerForm = () => {
@@ -57,7 +67,7 @@ const Application = ({ title, players }) => {
   return (
     <div className="scoreboard">
       <Header players={players} />
-      <PlayerList items={players} />
+      <ul><PlayerList players={players}/></ul>
       <PlayerForm />
     </div>
   );
