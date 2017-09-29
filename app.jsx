@@ -66,19 +66,11 @@ const getPlayersList = (players) => {
   return players.map((player, index) => {
     return (
       <li key={index}>
-        <div className="player player-name col-md-6 col-sm-6 col-xs-6 ">
-          <p>{player.name}</p>
-        </div>
-        <div className="col-md-6 col-sm-6 col-xs-6 ">
-          <div className=" col-md-2 col-sm-2 col-xs-2">
-            <button className="counter-action decrement btn btn-danger">-</button>
-          </div>
-          <div className="counter-score col-md-2 col-sm-2 col-xs-2">
-            <p>{player.score}</p>
-          </div>
-          <div className="col-md-2 col-sm-2 col-xs-2">
-            <button className="counter-action increment btn btn-success">+</button>
-          </div>
+        <div className="player">
+          <p className="player-name ">{player.name}</p>
+          <button className="counter counter-action decrement btn-danger">-</button>
+          <p className="counter-score">{player.score}</p>
+          <button className="counter counter-action increment btn-success">+</button>
         </div>
 
       </li >
@@ -100,8 +92,10 @@ const PlayerList = ({ players }) => {
 const PlayerForm = () => {
   return (
     <div className="add-player-form">
-      <input type="text" placeholder="Enter a name" />
-      <button  >ADD PLAYER</button>
+      <form action="">
+        <input type="text" placeholder="Enter a name" />
+        <button  >ADD PLAYER</button>
+      </form>
     </div>
   );
 }
