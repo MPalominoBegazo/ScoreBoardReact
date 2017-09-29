@@ -57,7 +57,7 @@ li{
 }
 .stopwatch {
   padding: 15px 10px 5px 10px;
-  margin: -5px -10px -5px 10px;
+  margin-right: 0;
   background: #2f2f2f;
   border-radius: 0 15px 0 0;
 }
@@ -68,7 +68,7 @@ li{
   }
 
   .stopwatch button {
-    margin: 8px 5px;
+   /* margin: 8px 5px;*/
     background-color: #222;
     border-radius: 5px;
     padding: 7px 8px;

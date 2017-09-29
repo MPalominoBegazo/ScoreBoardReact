@@ -19,15 +19,15 @@ let PLAYERS = [
 const stopWatch = () => {
   let contador = 0;
   return (
-    <div className="container-fluid stopwatch">
+    <div className="stopwatch container-fluid">
       <div className="row">
         <div className="col-md-12">
-          <p>STOPWATCH</p>
+          <h2>STOPWATCH</h2>
         </div>
       </div>
       <div className="row">
         <div className="col-md-12">
-          <p>{contador}</p>
+          <p className="stopwatch-time">{contador}</p>
         </div>
       </div>
       <div className="row">
@@ -39,6 +39,7 @@ const stopWatch = () => {
         </div>
       </div>
     </div>
+
   );
 }
 
@@ -52,17 +53,10 @@ const Header = ({ players }) => {
   }
   return (
     <div className="header" >
-      <div className="row">
-        <div className="col-md-6">
+      <h1 className="stats">PLAYERS: {playersNum}</h1><br />
+      <h1 className="stats">TOTAL POINTS: {score}</h1>
 
-          <p className="stats">PLAYERS: {playersNum}</p><br />
-          <p className="stats">TOTAL POINTS: {score}</p>
-
-        </div>
-        <div className="col-md-6">
-            <stopWatch />
-        </div>
-      </div>
+      {stopWatch()}
 
     </div>
   );
@@ -72,18 +66,21 @@ const getPlayersList = (players) => {
   return players.map((player, index) => {
     return (
       <li key={index}>
-        <div className="col-md-6 col-sm-6 col-xs-6 ">
+        <div className="player-name col-md-6 col-sm-6 col-xs-6 ">
           <p>{player.name}</p>
         </div>
-        <div className="col-md-2 col-sm-2 col-xs-2">
-          <button className="btn btn-danger">-</button>
+        <div className="col-md-6 col-sm-6 col-xs-6 ">
+          <div className=" col-md-2 col-sm-2 col-xs-2">
+            <button className="counter-action decrement btn btn-danger">-</button>
+          </div>
+          <div className="counter-score col-md-2 col-sm-2 col-xs-2">
+            <p>{player.score}</p>
+          </div>
+          <div className="col-md-2 col-sm-2 col-xs-2">
+            <button className="counter-action increment btn btn-success">+</button>
+          </div>
         </div>
-        <div className="col-md-2 col-sm-2 col-xs-2">
-          <p>{player.score}</p>
-        </div>
-        <div className="col-md-2 col-sm-2 col-xs-2">
-          <button className="btn btn-success">+</button>
-        </div>
+
       </li >
 
     );
@@ -104,7 +101,7 @@ const PlayerForm = () => {
   return (
     <div className="add-player-form">
       <input type="text" placeholder="Enter a name" />
-      <button>ADD PLAYER</button>
+      <button  >ADD PLAYER</button>
     </div>
   );
 }
