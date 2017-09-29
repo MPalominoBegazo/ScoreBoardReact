@@ -40,13 +40,13 @@ const getPlayersList = (players) => {
           <p>{player.name}</p>
         </div>
         <div className="col-md-2">
-          <button>+</button>
+          <button className="btn btn-danger">-</button>
         </div>
         <div className="col-md-2"> 
           <p>{player.score}</p>
         </div>
         <div className="col-md-2">
-          <button>-</button>
+          <button className="btn btn-success">+</button>
         </div>
       </li >
 

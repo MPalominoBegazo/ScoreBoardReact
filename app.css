@@ -52,7 +52,9 @@ body {
   .stats td:last-child {
     text-align: left;
   }
-
+li{
+  list-style: none;
+}
 .stopwatch {
   padding: 15px 10px 5px 10px;
   margin: -5px -10px -5px 10px;
