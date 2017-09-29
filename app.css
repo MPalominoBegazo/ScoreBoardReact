@@ -218,3 +218,16 @@ li{
     color: #fafafa;
     cursor: pointer;
   }
+
+  button {
+    /* margin: 8px 5px;*/
+     background-color: #222;
+     border-radius: 5px;
+     padding: 7px 8px;
+     border: none;
+     color: #999;
+     letter-spacing: 2px;
+     font-weight: bold;
+     text-shadow: none;
+     text-transform: uppercase;
+    }

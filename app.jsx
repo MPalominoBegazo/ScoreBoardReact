@@ -66,7 +66,7 @@ const getPlayersList = (players) => {
   return players.map((player, index) => {
     return (
       <li key={index}>
-        <div className="player-name col-md-6 col-sm-6 col-xs-6 ">
+        <div className="player player-name col-md-6 col-sm-6 col-xs-6 ">
           <p>{player.name}</p>
         </div>
         <div className="col-md-6 col-sm-6 col-xs-6 ">
