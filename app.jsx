@@ -16,6 +16,32 @@ let PLAYERS = [
   },
 ];
 
+const stopWatch = () => {
+  let contador = 0;
+  return (
+    <div className="container-fluid stopwatch">
+      <div className="row">
+        <div className="col-md-12">
+          <p>STOPWATCH</p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+          <p>{contador}</p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-6">
+          <button>START</button>
+        </div>
+        <div className="col-md-6">
+          <button>RESET</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const Header = ({ players }) => {
   let score = 0;
   let playersNum = players.length;
@@ -26,8 +52,18 @@ const Header = ({ players }) => {
   }
   return (
     <div className="header" >
-      <p>PLAYERS: {playersNum}</p><br />
-      <p>TOTAL POINTS: {score}</p>
+      <div className="row">
+        <div className="col-md-6">
+
+          <p className="stats">PLAYERS: {playersNum}</p><br />
+          <p className="stats">TOTAL POINTS: {score}</p>
+
+        </div>
+        <div className="col-md-6">
+            <stopWatch />
+        </div>
+      </div>
+
     </div>
   );
 }
@@ -36,16 +72,16 @@ const getPlayersList = (players) => {
   return players.map((player, index) => {
     return (
       <li key={index}>
-        <div className="col-md-6">
+        <div className="col-md-6 col-sm-6 col-xs-6 ">
           <p>{player.name}</p>
         </div>
-        <div className="col-md-2">
+        <div className="col-md-2 col-sm-2 col-xs-2">
           <button className="btn btn-danger">-</button>
         </div>
-        <div className="col-md-2"> 
+        <div className="col-md-2 col-sm-2 col-xs-2">
           <p>{player.score}</p>
         </div>
-        <div className="col-md-2">
+        <div className="col-md-2 col-sm-2 col-xs-2">
           <button className="btn btn-success">+</button>
         </div>
       </li >

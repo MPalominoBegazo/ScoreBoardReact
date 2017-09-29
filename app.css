@@ -1,6 +1,6 @@
 body {
   background: #d5d5d5; 
-  font-family: arial;
+  font-family: 'Roboto Mono', monospace;
   color: #FAFAFA;
   text-transform: uppercase;
 }
@@ -63,7 +63,7 @@ li{
 }
 
   .stopwatch-time {
-    font-family: monospace;
+    font-family: 'Roboto Mono', monospace;
     font-size: 2em;
   }
 
@@ -162,7 +162,7 @@ li{
     background: #2b2b2b;
     color: #FAFAFA;
     text-align: center;
-    font-family: monospace;
+    font-family: 'Roboto Mono', monospace;
     padding: 10px;
     font-size: 2em;
   }
