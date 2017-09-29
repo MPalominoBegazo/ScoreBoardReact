@@ -46,11 +46,11 @@ const Header = ({ players }) => {
   }
   return (
     <div className="header" >
-      <td >PLAYERS: <h1 >{playersNum}</h1></td>
-      <td className="stats">TOTAL POINTS: <h1 >{score}</h1></td>
-
+      <div className="stats">
+        <tr><td>PLAYERS:</td><td>{playersNum}</td></tr>
+        <tr><td>TOTAL POINTS:</td><td> {score}</td></tr>
+      </div>
       {stopWatch()}
-
     </div>
   );
 }
