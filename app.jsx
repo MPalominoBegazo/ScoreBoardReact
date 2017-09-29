@@ -20,16 +20,9 @@ const stopWatch = () => {
   let contador = 0;
   return (
     <div className="stopwatch container-fluid">
-      <div className="row">
-        <div className="col-md-12">
-          <h2>STOPWATCH</h2>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12">
-          <p className="stopwatch-time">{contador}</p>
-        </div>
-      </div>
+      <h2>STOPWATCH</h2>
+      <p className="stopwatch-time">{contador}</p>
+
       <div className="row">
         <div className="col-md-6">
           <button>START</button>
@@ -53,8 +46,8 @@ const Header = ({ players }) => {
   }
   return (
     <div className="header" >
-      <h1 className="stats">PLAYERS: {playersNum}</h1><br />
-      <h1 className="stats">TOTAL POINTS: {score}</h1>
+      <td >PLAYERS: <h1 >{playersNum}</h1></td>
+      <td className="stats">TOTAL POINTS: <h1 >{score}</h1></td>
 
       {stopWatch()}
 
@@ -68,11 +61,12 @@ const getPlayersList = (players) => {
       <li key={index}>
         <div className="player">
           <p className="player-name ">{player.name}</p>
-          <button className="counter counter-action decrement btn-danger">-</button>
-          <p className="counter-score">{player.score}</p>
-          <button className="counter counter-action increment btn-success">+</button>
+          <div className="counter">
+            <button className=" counter-action decrement btn-danger">-</button>
+            <p className="counter-score">{player.score}</p>
+            <button className="counter counter-action increment btn-success">+</button>
+          </div>
         </div>
-
       </li >
 
     );
